@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactieve H5P</title>
+    https://cdn.jsdelivr.net/npm/h5p-standalone@1.3.0/dist/main.bundle.js
+    https://cdn.jsdelivr.net/npm/h5p-standalone@1.3.0/dist/styles.css
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #h5p-container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mijn H5P Interactieve Content</h1>
+    <div id="h5p-container"></div>
+
+    <script>
+        function getH5PFileFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('file');
+        }
+
+        const h5pFile = getH5PFileFromURL();
+
+        if (h5pFile) {
+            new H5PStandalone.H5P(document.getElementById('h5p-container'), h5pFile);
+        } else {
+            document.getElementById('h5p-container').innerHTML = "<p style='color:red;'>Geen H5P-bestand opgegeven. Voeg ?file=bestandsnaam.h5p toe aan de URL.</p>";
+        }
+    </script>
+</body>
+</html>
+
+
