@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>H5P Viewer</title>
-  https://cdn.jsdelivr.net/gh/tunapanda/h5p-standalone@master/dist/main.bundle.js
   https://cdn.jsdelivr.net/gh/tunapanda/h5p-standalone@master/dist/styles/h5p.css
   <style>
     body {
@@ -24,9 +23,11 @@
 </head>
 <body>
   <div id="h5p-container"></div>
+
+  https://cdn.jsdelivr.net/gh/tunapanda/h5p-standalone@master/dist/main.bundle.js
   <script>
     new H5PStandalone.H5P(document.getElementById('h5p-container'), {
-      h5pJsonPath: "https://storage.googleapis.com/risenatalie/image-hotspots-75790.h5p"
+      h5pJsonPath: "image-hotspots-75790.h5p"
     });
   </script>
 </body>
